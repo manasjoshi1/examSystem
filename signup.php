@@ -45,10 +45,10 @@
                          $s_q_number=$_POST['s_q_number'];
                          $s_q_answer=$_POST['s_q_answer'];
                          $s_res_address=$_POST['s_res_address'];
-                         if($password!=$confirmPassword){
+                         if($s_password!=$s_confirm_password){
                            echo '<script>alert("Passwords Mismatch")</script>';
-                           echo '<script>window.open("signup.php","_self")</script>';
-                           exit();
+                           //echo '<script>window.open("signup.php","_self")</script>';
+                           //exit();
                          }
                       $a = new student();
                       $a->insertNewStudent($s_name, $s_school, $s_address, $s_board, $s_grade, $s_branch,$s_gender,
@@ -75,8 +75,7 @@
                                         </div>
                                         <div class="form-group">
                                           <select name="s_board"class="form-control">
-                                              <option class="hidden"  selected disabled>Board</option>
-                                              <option value="1">SSC</option>
+                                              <option value="1" selected>SSC</option>
                                               <option value="2">CBSE</option>
                                               <option value="3">ICSE</option>
 
@@ -85,8 +84,7 @@
 
                                         <div class="form-group">
                                           <select name="s_grade" class="form-control">
-                                              <option class="hidden"  selected disabled>Grade</option>
-                                              <option value="1">5th</option>
+                                              <option value="1" selected>5th</option>
                                               <option value="2">6th</option>
                                               <option value="3">7th</option>
                                               <option value="4">8th Full Sanskrit</option>
@@ -101,8 +99,7 @@
                                         </div>
                                         <div class="form-group">
                                           <select name="s_branch" class="form-control">
-                                              <option class="hidden"  selected disabled>Tuition Branch</option>
-                                              <option value="1">Pawan Nagar</option>
+                                              <option value="1" selected>Pawan Nagar</option>
                                               <option value="2">Ashok Stambh</option>
                                               <option value="3">Indira Nagar</option>
                                               <option value="4">P And T Colony</option>
@@ -111,7 +108,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <input type="text"  maxlength="255"  class="form-control" name="s_email" placeholder="Your Address *" value="" required/>
+                                            <input type="text"  maxlength="255"  class="form-control" name="s_res_address" placeholder="Your Address *" value="" required/>
                                         </div>
                                         <div class="form-group">
                                             <div class="maxl">

@@ -2,7 +2,7 @@
 require_once(dirname(__FILE__).'/config.php');
 class student{
 public function insertNewStudent($s_name, $s_school, $s_address, $s_board, $s_grade, $s_branch,$s_gender
-  ,$s_email, $s_password, $s_phone,$s_q_number,$s_q_answer,$_res_address) {
+  ,$s_email, $s_password, $s_phone,$s_q_number,$s_q_answer,$s_res_address) {
 
     $alreadyExists= getParticularStudent($s_email);
     if(strlen($s_password)<8)
@@ -28,8 +28,8 @@ else {
         ,'$s_email', '$s_password', '$s_phone',$s_q_number,'$s_q_answer','$s_res_address');";
       $result=mysqli_query($conn,$query);
       if($result){
-        echo '<script>confirm("Congratulations '.$username.'. Once account is activated you will get a mail")</script>';
-        echo '<script>window.open("login.php","_self")</script>';
+        echo '<script>confirm("Congratulations '.$s_name.'. Once account is activated you will get a mail")</script>';
+    //    echo '<script>window.open("signin.php","_self")</script>';
 
       }
       else{
@@ -56,8 +56,58 @@ else {
          return NULL;
      }
  }
-    public function getParticularStudent($email){
-     $conn=$GLOBALS['conn'];
+}
+     function getParticularStudent($email){
+       $conn=$GLOBALS['conn'];
+       $query="SELECT * FROM student where s_email='{$email}'";
+     	 $runQuery=mysqli_query($conn,$query);
+     	 if(!$runQuery)
+     		die("Query Fail " .mysqli_error($conn));
+     	$passwordCorrect="";
+     	while($row=mysqli_fetch_assoc($runQuery)){
+     		$departmentdb=$row['department'];
+     		$usernameDB=$row['username'];
+     		$uidDB=$row['uid'];
+     		$passwordDB=$row['password'];
+     		$status=$row['status'];
+
+         $passwordCorrect = password_verify($password, $passwordDB);
+         if($passwordCorrect){
+         if($status==1){
+
+
+
+       		$_SESSION['username']=$usernameDB;
+       		$_SESSION['department']=$departmentdb;
+       		$_SESSION['uid']=$uid;
+           $_SESSION['last_time'] = time();
+
+       		$sessName=$_SESSION['username'];
+       		$sessDept=$_SESSION['department'];
+
+       		      	echo "<script>window.open('main/index.php','_self' )</script>";
+       		}
+           elseif($status==0){
+             echo "<script>alert('You are not activated. Yow will get a mail of activation' )</script>";
+
+                     echo "<script>window.open('main/index.php','_self' )</script>";
+
+
+           }
+           else{
+             echo "<script>alert('You are not a Member Anymore.' )</script>";
+
+                     echo "<script>window.open('../../index.php','_self' )</script>";
+           }
+         }
+           else{
+             echo "<script>alert('Incorrect Credentials' )</script>";
+
+
+           }
+
+
+
      $sql="SELECT * FROM student where email='{$email}'";
      $result=mysqli_query($conn,$query);
      $rows = array();
