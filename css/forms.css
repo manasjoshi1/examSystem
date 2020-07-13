@@ -55,6 +55,27 @@ a:after{
   background-color: inherit;
   border-color: inherit;
 }
+
+.navbar .navbar-toggler-icon {
+	background-image: none;
+}
+.navbar .navbar-toggler {
+	border-color: #fff;
+	background-color: #fff;
+	height: 36px;
+	outline: none;
+	border-radius: 0px;
+	position: absolute;
+	right: 30px;
+	top: 20px;
+}
+.navbar .navbar-toggler-icon:after {
+	content: '\f0c9';
+	color: rgba(86, 58, 250, 0.9) ;
+	font-size: 18px;
+	line-height: 26px;
+	font-family: 'FontAwesome';
+}
 .btn-primary:hover{
   border-color: #fff;
   background-color: rgba(116, 15, 214, 0.9);
@@ -249,4 +270,9 @@ ffd6a4
   background-color: #ced7ef;
   color: red;
   vertical-align: middle;
+}
+@media (min-width: 1200px) {
+  #hero {
+    background-attachment: fixed;
+  }
 }

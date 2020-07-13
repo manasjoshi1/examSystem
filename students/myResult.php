@@ -64,7 +64,7 @@ if(mysqli_num_rows($res)>0){
 
 }
 }
-}?>
+  }?>
 </table>
            </div>
 

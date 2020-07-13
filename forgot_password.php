@@ -5,17 +5,20 @@ session_start();?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <meta charset="utf-8" lang="en">
+    <meta name="google-site-verification" content="A2anYa8q1pnEvG537I2viiBed5NkWcLpoPtAve4pFi0" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SignUp | Sugam Sanskritam</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/signup.css">
   </head>
+  <body>
 
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<link rel="stylesheet" href="css/signup.css">
-<body>
 
 <div class="container register">
                 <div class="row">
@@ -24,7 +27,7 @@ session_start();?>
                         <h3>Welcome</h3>
                         <p>You are 30 seconds away from learning!</p>
                         <a href="signin.php"><input type="submit" name="" value="Login"  required/></a>  <brrequired/>
-                        
+
                     </div>
                     <div class="col-md-9 register-right" >
 

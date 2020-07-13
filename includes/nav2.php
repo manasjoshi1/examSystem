@@ -1,6 +1,8 @@
 <?php
 include('../includes/dropdowns.php');
 ?>
+<link rel="stylesheet" href="../css/fontawesome.css">
+
 <link href='https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
 <link rel="stylesheet" href="../css/forms.css">

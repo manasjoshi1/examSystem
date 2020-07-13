@@ -40,6 +40,7 @@
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
         <a href="https://www.facebook.com/sugamsanskritam" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.facebook.com/sugamsanskritam" class="youtube"><i class="bx bxl-youtube"></i></a>
       </div>
     </div>
 

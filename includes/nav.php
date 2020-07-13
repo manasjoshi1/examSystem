@@ -1,7 +1,9 @@
 <link rel="stylesheet" href="../css/forms.css">
+<link rel="stylesheet" href="../css/fontawesome.css">
+
 <link href='https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-<nav class="navbar navbar-expand-md fixed-top mynav" align="center">
+<nav class="navbar navbar-expand-md  fixed-top mynav" align="center">
 <a class="navbar-brand" href="sIndex.php">Sugam Sanskritam</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
