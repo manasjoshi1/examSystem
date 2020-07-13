@@ -1,4 +1,4 @@
-<?php $conn = mysqli_connect("localhost", "root", "", "examSystem");
+<?php $conn = mysqli_connect("localhost", "root", "", "exam");
 if(!$conn)
 die();
 ?>

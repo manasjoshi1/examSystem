@@ -1,15 +1,18 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-<a class="navbar-brand" href="#">Sugam Sanskritam</a>
+<link rel="stylesheet" href="../css/forms.css">
+<link href='https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+<nav class="navbar navbar-expand-md fixed-top mynav" align="center">
+<a class="navbar-brand" href="sIndex.php">Sugam Sanskritam</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="navbarCollapse">
-<ul class="navbar-nav mr-auto">
+<ul class="navbar-nav ml-auto ">
   <li class="nav-item active">
-    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    <a class="nav-link" href="sIndex.php">Home <span class="sr-only">(current)</span></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Up Coming Exams</a>
+    <a class="nav-link" href="upComingExams.php">Up Coming Exams</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Report</a>
@@ -18,9 +21,26 @@
     <a class="nav-link " href="#">Contact us</a>
   </li>
 </ul>
-<form class="form-inline mt-2 mt-md-0">
-  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-</form>
-</div>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#logoutModal">
+  Logout
+  </button>
+
 </nav>
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Are you sure <?php echo $_SESSION['username']?> ? </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <a class="btn btn-primary" href="../logout.php">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

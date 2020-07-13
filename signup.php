@@ -10,7 +10,7 @@
                         <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""required/>
                         <h3>Welcome</h3>
                         <p>You are 30 seconds away from learning!</p>
-                        <input type="submit" name="" value="Login"required/><brrequired/>
+                        <a href="signin.php"><input type="submit" name="" value="Login"  required/></a>  <brrequired/>
                     </div>
                     <div class="col-md-9 register-right">
                       <?php
@@ -47,8 +47,8 @@
                          $s_res_address=$_POST['s_res_address'];
                          if($s_password!=$s_confirm_password){
                            echo '<script>alert("Passwords Mismatch")</script>';
-                           //echo '<script>window.open("signup.php","_self")</script>';
-                           //exit();
+                           echo '<script>window.open("signup.php","_self")</script>';
+                           exit();
                          }
                       $a = new student();
                       $a->insertNewStudent($s_name, $s_school, $s_address, $s_board, $s_grade, $s_branch,$s_gender,
@@ -88,13 +88,14 @@
                                               <option value="2">6th</option>
                                               <option value="3">7th</option>
                                               <option value="4">8th Full Sanskrit</option>
-                                              <option value="4">8th Composite Sanskrit</option>
-                                              <option value="5">9th Full Sanskrit</option>
-                                              <option value="5">9th Composite Sanskrit</option>
-                                              <option value="6">10th Full Sanskrit</option>
-                                              <option value="6">10th Composite Sanskrit</option>
-                                              <option value="7">11th</option>
-                                              <option value="8">12th</option>
+                                              <option value="5">8th Composite Sanskrit</option>
+                                              <option value="6">9th Full Sanskrit</option>
+                                              <option value="7">9th Composite Sanskrit</option>
+                                              <option value="8">10th Full Sanskrit</option>
+                                              <option value="9">10th Composite Sanskrit</option>
+                                              <option value="10">11th</option>
+                                              <option value="11">12th</option>
+                                              <option value="12">Grammar Batch</option>
                                           </select>
                                         </div>
                                         <div class="form-group">

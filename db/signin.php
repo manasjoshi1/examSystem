@@ -14,15 +14,19 @@ if(isset($_POST['submit']) && $_POST['submit']=="Login"){
     $runQuery=mysqli_query($conn,$query);
     if(mysqli_num_rows($runQuery)==0){
       echo "<script>alert('This email does not exists please register.' )</script>";
-      echo "<script>window.open('../signup.php','_self' )</script>";
+      echo "<script>window.open('../students/sIndex.php','_self' )</script>";
     }
       else{
         $passwordCorrect="";
         while($row=mysqli_fetch_assoc($runQuery)){
           $email=$row['s_email'];
+          $s_id=$row['s_id'];
           $usernameDB=$row['s_name'];
           $status=$row['s_status'];
           $passwordDB=$row['s_password'];
+          $board=$row['s_board'];
+          $branch=$row['s_branch'];
+          $grade=$row['s_grade'];
 
           $passwordCorrect = password_verify($password, $passwordDB);
 
@@ -31,9 +35,15 @@ if(isset($_POST['submit']) && $_POST['submit']=="Login"){
 
               $_SESSION['username']=$usernameDB;
               $_SESSION['department']=$email;
+              $_SESSION['s_board']=$board;
+              $_SESSION['s_id']=$s_id;
+              $_SESSION['s_branch']=$branch;
+              $_SESSION['s_grade']=$grade;
+              $_SESSION['userType']='1';
               $_SESSION['last_time'] = time();
+              //die(print_r($_SESSION));
 
-                echo "<script>window.open('main/index.php','_self' )</script>";
+                echo "<script>window.open('students/sIndex.php','_self' )</script>";
               }
               elseif($status==0){
                 echo "<script>alert('You are not activated. Wait till your activation' )</script>";
@@ -86,7 +96,6 @@ if(isset($_POST['submit']) && $_POST['submit']=="Login"){
       $_SESSION['department']=$email;
       $_SESSION['uid']=$uid;
       $_SESSION['last_time'] = time();
-
               echo "<script>window.open('main/index.php','_self' )</script>";
       }
        elseif($status==0){
