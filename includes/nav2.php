@@ -1,4 +1,6 @@
-<?php include('../includes/dropdowns.php');?>
+<?php
+include('../includes/dropdowns.php');
+?>
 <link href='https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
 <link rel="stylesheet" href="../css/forms.css">
@@ -40,7 +42,7 @@
       <div class="modal-body">Are you sure <?php echo $_SESSION['username']?> ? </div>
       <div class="modal-footer">
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        <a class="btn btn-primary" href="../logout.php">Logout</a>
+        <a class="btn btn-info" href="../logout.php">Logout</a>
       </div>
     </div>
   </div>

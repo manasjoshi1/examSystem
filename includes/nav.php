@@ -15,10 +15,10 @@
     <a class="nav-link" href="upComingExams.php">Up Coming Exams</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Report</a>
+    <a class="nav-link" href="myResult.php">Result</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link " href="#">Contact us</a>
+    <a class="nav-link " href="../contactus.php">Contact us</a>
   </li>
 </ul>
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#logoutModal">
@@ -38,7 +38,7 @@
       <div class="modal-body">Are you sure <?php echo $_SESSION['username']?> ? </div>
       <div class="modal-footer">
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        <a class="btn btn-primary" href="../logout.php">Logout</a>
+        <a class="btn btn-info" href="../logout.php">Logout</a>
       </div>
     </div>
   </div>
