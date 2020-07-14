@@ -28,12 +28,13 @@ if ($file_type=="application/pdf") {
  $result=mysqli_query($conn,$query1);
  if($result){
 
-   $query2="select ch_p_id from checked_paper order by ch_p_id desc limit 1";
+   $query2="select ch_p_id,cl_p_id from checked_paper order by ch_p_id desc limit 1";
    $result2=mysqli_query($conn,$query2);
    while($row3=mysqli_fetch_assoc($result2)){
      $ch_id=$row3['ch_p_id'];
+     $cl_p_id=$row3['cl_p_id'];
    }
-   $query3="Update collected_paper set ch_id=$ch_id";
+   $query3="Update collected_paper set ch_id=$ch_id where cl_p_id=$cl_p_id";
    $result3=mysqli_query($conn,$query3);
  }
  if(!$result2){
