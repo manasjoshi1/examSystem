@@ -52,8 +52,8 @@
     $date1=date('yy-m-d');
     $t=strtotime(date('g:i:s'));
 
-    if($date1>=$p_s_date && $date1<$p_t_date){
-      if( $t>strtotime($p_s_time) && $t<strtotime($p_t_time))
+    if($date1>=$p_s_date && $date1<=$p_t_date){
+      if( $t>=strtotime($p_s_time) && $t<=strtotime($p_t_time))
       {
         ?>
         <div class="mycontainer" >

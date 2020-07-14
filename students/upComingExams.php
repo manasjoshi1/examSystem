@@ -12,7 +12,7 @@
 
     <?php require("../includes/nav.php");?>
     <main  role='main' class='container'>
-
+<br>
     <div class="card-deck">
     <?php
     $counter=1;
@@ -24,7 +24,7 @@
     $board_id=$_SESSION['s_board'];
     $b_id=$_SESSION['s_branch'];
     $g_id=$_SESSION['s_grade'];
-    $query="SELECT * FROM paper where board_id=$board_id AND  b_id=$b_id or b_id =0 And g_id=$g_id  ";
+    $query="SELECT * FROM paper where board_id=$board_id AND  b_id=$b_id or b_id =0 And g_id=$g_id order by p_id desc  ";
     $runQuery=mysqli_query($conn,$query);
     if(mysqli_num_rows($runQuery)==0){
       echo "Nothing";
@@ -47,7 +47,7 @@
 
     ?>
 <?php
-if($counter%3!=0){
+// if($counter%3!=0){
 $date1=date('yy-m-d');
 $t=strtotime(date('g:i:s'));
 echo "
@@ -58,9 +58,10 @@ echo "
           <p class='card-text'>Time:$p_s_time - $p_t_time</p>
           <p class='card-text'>$p_max_marks $counter</p>";
 
-          if($date1>=$p_s_date && $date1<$p_t_date){
 
-            if( $t>strtotime($p_s_time) && $t<strtotime($p_t_time))
+          if($date1>=$p_s_date && $date1<=$p_t_date){
+
+            if( $t>=strtotime($p_s_time) && $t<=strtotime($p_t_time))
             {
             echo "<a href='../createdPaper/viewpdf.php?p_id=$p_id' target='_blank'  class='btn btn-success btn-sm' >Open</a><br><hr>";
 
@@ -86,13 +87,13 @@ echo "
       </div>
            ";
            $counter++;
-         }
-         else {
-           $counter=0;
-           echo "
-                   </div><div class='card-deck'>";
-
-         }
+         // }
+         // else {
+         //   $counter=0;
+         //   echo "
+         //           </div><div class='card-deck'>";
+         //
+         // }
        }
      }
 

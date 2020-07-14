@@ -11,7 +11,7 @@
   </head>
   <body>
     <?php require("../includes/nav2.php");
-    if ($_SESSION['userType']=='1') {
+    if ($_SESSION['userType']=='2') {
     ?>
     <?php require("../db/config.php");?>
 
@@ -44,7 +44,6 @@ if(mysqli_num_rows($res)>0){
  <tbody>';
  while($row=mysqli_fetch_assoc($res))
 {
-  echo"$row[p_id]";
   $cl_p_id=$row['cl_p_id'];
   $qu="SELECT  * FROM student  where s_id=$row[s_id] ";
   $resu=mysqli_query($conn,$qu);
@@ -61,7 +60,7 @@ if(mysqli_num_rows($res)>0){
                    </div>
 
     </td>";
-    echo "<td> <input type='text' class='form-control' name='ch_marks' aria-describedby='emailHelp' placeholder='Marks Obtained'></td>";
+    echo "<td> <input type='text' class='form-control' name='ch_marks' required aria-describedby='emailHelp' placeholder='Marks Obtained'></td>";
     echo "<td>  <button type='submit' name='submit' class='btn btn-info'>Add Paper</button>
     </form>
     </td>";

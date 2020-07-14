@@ -37,8 +37,9 @@ if(mysqli_num_rows($res)>0){
   <thead align="center">
     <tr>
     <th>Topic</th>
-    <th>Marks</th>
     <th>Out Of</th>
+    <th>Marks</th>
+
     <th>Paper</th>
    </tr>
  </thead>
@@ -47,18 +48,20 @@ if(mysqli_num_rows($res)>0){
  while($row=mysqli_fetch_assoc($res))
 {
 
-  $qu="SELECT  * FROM checked_paper  where ch_p_id=$row[ch_id] ";
+  $qu="SELECT  * FROM checked_paper  where ch_p_id=$row[ch_id] limit 1 ";
   $resu=mysqli_query($conn,$qu);
+
   $query="SELECT  * FROM paper  where p_id=$row[p_id]";
   $result=mysqli_query($conn,$query);
 
-  while($row2=mysqli_fetch_assoc($resu)){
     while($row3=mysqli_fetch_assoc($result)){
     echo "<tr><td>{$row3['p_topic']}</td>";
     echo "<td>{$row3['p_max_marks']}</td>";
-    echo "<td>{$row2['ch_marks']}</td>";
-    echo "<td><a href='../checkedPaper/viewAnswer.php?p_id=$row2[ch_link]' >Paper</a></td></tr>";
-}
+  }
+
+    while($row2=mysqli_fetch_assoc($resu)){
+echo "<td>{$row2['ch_marks']}</td>";
+echo "<td><a href='../checkedPaper/viewAnswer.php?p_id=$row2[ch_link]' >Paper</a></td></tr>";
 
 }
 

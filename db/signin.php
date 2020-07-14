@@ -71,7 +71,7 @@ if(isset($_POST['submit']) && $_POST['submit']=="Login"){
 
      }
 
-  else
+  else if($_POST['type']==2)
    {
     $table='teacher';
     $query="SELECT * FROM teacher where t_email='{$email}'";
@@ -86,17 +86,17 @@ if(isset($_POST['submit']) && $_POST['submit']=="Login"){
     $email=$row['t_email'];
     $usernameDB=$row['t_name'];
     $status=$row['t_status'];
-    $passwordCorrect=$row['t_password'];
+    $passwordDB=$row['t_password'];
 
-     //$passwordCorrect = password_verify($password, $passwordDB);
+     $passwordCorrect = password_verify($password, $passwordDB);
      if($passwordCorrect){
      if($status==1){
 
       $_SESSION['username']=$usernameDB;
       $_SESSION['department']=$email;
-      $_SESSION['uid']=$uid;
+      $_SESSION['userType']=2;
       $_SESSION['last_time'] = time();
-              echo "<script>window.open('main/index.php','_self' )</script>";
+              echo "<script>window.open('teachers/tIndex.php','_self' )</script>";
       }
        elseif($status==0){
          echo "<script>alert('You are not activated. Wait till your activation' )</script>";
