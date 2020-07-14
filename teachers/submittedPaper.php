@@ -24,8 +24,11 @@
 
   $conn=$GLOBALS['conn'];
   $row3= array();
-  $q="SELECT  * FROM collected_paper  where ch_id IS NULL Group By p_id ";
+  $q="SELECT  * FROM collected_paper  where ch_id IS NULL order By p_id ";
   $res=mysqli_query($conn,$q);
+  if(!$res){
+    echo mysqli_error($conn);
+  }
 
 if(mysqli_num_rows($res)>0){
 

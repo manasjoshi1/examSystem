@@ -17,7 +17,7 @@ foreach($_POST as $key => $value) {
 
 
 $query='select n_id from notes order by n_id desc limit 1';
-$n_id='';
+$n_id='1';
 $ok=1;
 $result=mysqli_query($conn,$query);
 if(!$result){
