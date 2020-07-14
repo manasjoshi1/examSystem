@@ -25,6 +25,7 @@
         echo "Nothing";
       }
       else {
+
         while($row=mysqli_fetch_assoc($runQuery)){
         $p_s_date=$row['p_date'];
         $p_s_time=$row['p_s_time'];
@@ -37,13 +38,16 @@
         $g_id=$row['g_id'];
         $b_id=$row['b_id'];
         $board_id=$row['board_id'];
+
     }
+
     $board_s_id=$_SESSION['s_board'];
     $b_s_id=$_SESSION['s_branch'];
     $g_s_id=$_SESSION['s_grade'];
     $s_id=$_SESSION['s_id'];
 
-    if($board_s_id==$board_id && $b_id==$b_s_id&&$g_id==$g_s_id){
+    if($board_s_id==$board_id && ($b_id==$b_s_id||$b_id==0)&&$g_id==$g_s_id){
+
         $query="SELECT * FROM collected_paper where p_id=$p_id and s_id=$s_id";
         $res=mysqli_query($conn,$query);
 

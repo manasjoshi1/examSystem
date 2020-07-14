@@ -24,7 +24,7 @@
     $board_id=$_SESSION['s_board'];
     $b_id=$_SESSION['s_branch'];
     $g_id=$_SESSION['s_grade'];
-    $query="SELECT * FROM paper where board_id=$board_id AND  b_id=$b_id or b_id =0 And g_id=$g_id order by p_id desc  ";
+    $query="SELECT * FROM paper where board_id=$board_id AND  (b_id=$b_id or b_id =0) And g_id=$g_id order by p_id desc  ";
     $runQuery=mysqli_query($conn,$query);
     if(mysqli_num_rows($runQuery)==0){
       echo "Nothing";
@@ -56,18 +56,18 @@ echo "
         <div class='card-body text-primary'>
           <h6 class='card-title'>Date: $p_s_date - $p_t_date</h6>
           <p class='card-text'>Time:$p_s_time - $p_t_time</p>
-          <p class='card-text'>$p_max_marks $counter</p>";
+          <p class='card-text'>$p_max_marks </p>";
 
 
           if($date1>=$p_s_date && $date1<=$p_t_date){
-
             if( $t>=strtotime($p_s_time) && $t<=strtotime($p_t_time))
             {
+
             echo "<a href='../createdPaper/viewpdf.php?p_id=$p_id' target='_blank'  class='btn btn-success btn-sm' >Open</a><br><hr>";
 
             echo "<a href='../students/submit_paper.php?p_id=$p_id'  class='btn btn-info btn-sm' >Submit Paper</a>";
           }
-          elseif($t<strtotime($p_s_time) && $t>strtotime($p_t_time)){
+          elseif($t<strtotime($p_s_time) || $t>strtotime($p_t_time)){
             echo "<a href='#' class='btn btn-danger' >Paper Expired</a>";
 
           }

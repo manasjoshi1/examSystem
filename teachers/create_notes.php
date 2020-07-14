@@ -12,7 +12,7 @@
   <body>
     <?php
     require("../includes/nav2.php");
-    if ($_SESSION['userType']=='1') {
+    if ($_SESSION['userType']=='2') {
     ?>
     <?php require("../db/createNotes.php");?>
 
