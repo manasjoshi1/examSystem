@@ -14,7 +14,7 @@
     <a class="nav-link" href="../students/sIndex.php">Home <span class="sr-only">(current)</span></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../students/upComingExams.php'?>">Up Coming Exams</a>
+    <a class="nav-link" href="../students/upComingExams.php">Up Coming Exams</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="../students/myResult.php">Result</a>

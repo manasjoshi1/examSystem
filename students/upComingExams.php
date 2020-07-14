@@ -61,7 +61,9 @@ echo "
 
 
           if($date1>=$p_s_date && $date1<=$p_t_date){
-          
+          echo "Hey";
+          echo date('H:i:s');
+
             if( $t>=strtotime($p_s_time) && $t<=strtotime($p_t_time))
             {
 
@@ -69,11 +71,11 @@ echo "
 
             echo "<a href='../students/submit_paper.php?p_id=$p_id'  class='btn btn-info btn-sm' >Submit Paper</a>";
           }
-          elseif($t<strtotime($p_s_time) || $t>strtotime($p_t_time)){
+          elseif($t>strtotime($p_s_time) && $t>strtotime($p_t_time)){
             echo "<a href='#' class='btn btn-danger' >Paper Expired</a>";
 
           }
-          else {
+          elseif($t<strtotime($p_s_time) && $t<strtotime($p_t_time)){
             echo "<a href='#' class='btn btn-warning' >Paper Yet to Come</a>";
           }
       }
