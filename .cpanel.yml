@@ -1,5 +1,5 @@
 deployment:
       tasks:
         - export DEPLOYPATH=/home/sugamsan/public_html/
-        - /bin -r cp * $DEPLOYPATH
+        - /bin/cp -r * $DEPLOYPATH
         
