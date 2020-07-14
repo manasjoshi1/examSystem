@@ -47,7 +47,7 @@
 
       echo "<tr><td>{$row['n_title']}</td>";
       echo "<td>{$row['n_topic']}</td>";
-      echo "<td><a href='../createdNotes/viewAnswer.php?p_id=$row[n_link]' >Paper</a></td></tr>";
+      echo "<td><a href='../createdNotes/viewAnswer.php?p_id=$row[n_link]' >Open</a></td></tr>";
 
     ?>
 <?php
