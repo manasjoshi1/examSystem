@@ -16,7 +16,7 @@ foreach($_POST as $key => $value) {
 
 
 $query='select p_id from paper order by p_id desc limit 1';
-$p_id='';
+$p_id=0;
 $ok=1;
 $result=mysqli_query($conn,$query);
 if(!$result){
