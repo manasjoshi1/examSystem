@@ -54,17 +54,27 @@ if(mysqli_num_rows($res)>0){
 
   while($row2=mysqli_fetch_assoc($resu)){
     while($row3=mysqli_fetch_assoc($result)){
-    echo "<td>{$row3['p_topic']}</td>";
+    echo "<tr><td>{$row3['p_topic']}</td>";
     echo "<td>{$row3['p_max_marks']}</td>";
     echo "<td>{$row2['ch_marks']}</td>";
-    echo "<td><a href='../checkedPaper/viewAnswer.php?p_id=$row2[ch_link]' >Paper</a></td>";
+    echo "<td><a href='../checkedPaper/viewAnswer.php?p_id=$row2[ch_link]' >Paper</a></td></tr>";
 }
 
 }
 
 }
 }
-  }?>
+  }
+  else {
+    echo '
+            <section class="ftco-section contact-section ftco-degree-bg" style="text-align:center">
+              <div class="container">
+                <div class="row block-9">
+                  <div class="col-sm-9 col-md-8 col-lg-8 mx-auto" >
+                  <h1>Unauthorized Access!!</h1><br>
+            <a href="../logout.php" class="btn btn-primary btn-lg" >Go Back to login</a></div></div></div></section>';
+  }
+  ?>
 </table>
            </div>
 
@@ -73,15 +83,7 @@ if(mysqli_num_rows($res)>0){
   </body>
 </html>
 <?php
-// }
-// else {
-//   echo '
-//           <section class="ftco-section contact-section ftco-degree-bg" style="text-align:center">
-//             <div class="container">
-//               <div class="row block-9">
-//                 <div class="col-sm-9 col-md-8 col-lg-8 mx-auto" >
-//                 <h1>Unauthorized Access!!</h1><br>
-//           <a href="../logout.php" class="btn btn-primary btn-lg" >Go Back to login</a></div></div></div></section>';
-// }
+
+
  ?>
  <?php require("../includes/footer.php");?>

@@ -17,7 +17,7 @@ $target_file = $target_dir . $newfilename;
 $uploadOk = 1;
 $file_type=$_FILES['fileToUpload']['type'];
 
-if ($file_type=="application/pdf" || $file_type=="image/jpg" || $file_type=="image/jpeg") {
+if ($file_type=="application/pdf") {
 
  if(move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $target_file))
 

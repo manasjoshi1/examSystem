@@ -10,8 +10,9 @@
 
   </head>
   <body>
-    <?php require("../includes/nav2.php");
-    if ($_SESSION['userType']=='2') {
+    <?php
+    require("../includes/nav2.php");
+    if ($_SESSION['userType']=='1') {
     ?>
     <?php require("../db/createNotes.php");?>
 
@@ -23,7 +24,7 @@
 
                  <div class="form-group">
                    <label class="">Notes Title</label>
-                     <input type="text" class="form-control" id="exampleInputEmail1" name="p_s_date"aria-describedby="emailHelp" placeholder="Enter email">
+                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Topic" name="n_title"aria-describedby="emailHelp" >
                  </div>
 
                  <div class="form-group">
@@ -46,14 +47,14 @@
 
                      <input type="text" class="form-control" name="p_topic"id="exampleInputPassword1" placeholder="Topics">
                  </div>
-                 
+
                  <div class="form-group">
                    <label class="">Choose File:</label>
 
                    <input type="file" name="fileToUpload" id="fileToUpload">
                    </div>
                  <div class="account-dialog-actions">
-                     <button type="submit"  name="submit" value="addPaper"class="btn btn-primary">Add Paper</button>
+                     <button type="submit"  name="submit" value="addNotes"class="btn btn-primary">Add Paper</button>
                  </div>
              </form>
            </div>

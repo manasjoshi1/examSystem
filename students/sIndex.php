@@ -9,7 +9,15 @@
 
     ?>
     <main  role="main" class="container">
-
+      <div class="ui segment">
+  <p> Let's take a look at any upcoming exams... <a href="upComingExams.php">Exams✒</a> </p>
+</div>
+<div class="ui secondary segment">
+  <p>There may be few notes waiting for you so that you can score great marks... <a href="viewNotes.php">Notes📖</a> </p>
+</div>
+<div class="ui tertiary segment">
+  <p>Hey! Check wether your details with us are correct or not... <a href="viewUser.php?id=<?php echo $_SESSION['s_id'];?>">Profile😀</a> </p>
+</div>
 
 
            </main>

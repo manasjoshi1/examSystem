@@ -20,6 +20,9 @@
     <a class="nav-link" href="myResult.php">Result</a>
   </li>
   <li class="nav-item">
+    <a class="nav-link" href="viewNotes.php">Notes</a>
+  </li>
+  <li class="nav-item">
     <a class="nav-link " href="../contactus.php">Contact us</a>
   </li>
 </ul>
