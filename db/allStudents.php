@@ -29,8 +29,11 @@
     $uid=$row['s_id'];
     $department=$row['s_name'];
 
-    $username=$row['s_branch'];
-    $email=$row['s_grade'];
+
+          $username=$row['s_branch'];
+          $username=getBranch($username);
+          $email=$row['s_grade'];
+          $email=getGrade($email);
 
     $status=$row['s_status'];
 
@@ -57,8 +60,11 @@
       $uid=$row['s_id'];
       $department=$row['s_name'];
 
-      $username=$row['s_branch'];
-      $email=$row['s_grade'];
+
+            $username=$row['s_branch'];
+            $username=getBranch($username);
+            $email=$row['s_grade'];
+            $email=getGrade($email);
 
       $status=$row['s_status'];
 
@@ -85,7 +91,9 @@
       $department=$row['s_name'];
 
       $username=$row['s_branch'];
+      $username=getBranch($username);
       $email=$row['s_grade'];
+      $email=getGrade($email);
 
       $status=$row['s_status'];
 
@@ -147,5 +155,31 @@ if (isset($_GET['id'])&&isset($_GET['action']))
   header("Location: ../teachers/allStudents.php
 ");
 }
+
+}
+function getBranch($i){
+  $conn=$GLOBALS['conn'];
+
+  $query ="select * from branch where b_id={$i}";
+  $result=mysqli_query($conn,$query);
+  $b_name="";
+  while($row=mysqli_fetch_assoc($result)){
+    $b_name=$row['b_name'];
+
+  }
+  return $b_name;
+
+}
+function getGrade($i){
+  $conn=$GLOBALS['conn'];
+
+  $query ="select * from grade where g_id={$i}";
+  $result=mysqli_query($conn,$query);
+  $b_name="";
+  while($row=mysqli_fetch_assoc($result)){
+    $b_name=$row['g_name'];
+
+  }
+  return $b_name;
 
 }
