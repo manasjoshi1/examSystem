@@ -24,7 +24,7 @@
     $board_id=$_SESSION['s_board'];
     $b_id=$_SESSION['s_branch'];
     $g_id=$_SESSION['s_grade'];
-    $query="SELECT * FROM notes where board_id=$board_id AND  (b_id=$b_id or b_id =0) And g_id=$g_id order by n_id desc  ";
+    $query="SELECT * FROM notes where (board_id=$board_id or board_id =0) AND  (b_id=$b_id or b_id =0) And g_id=$g_id order by n_id desc  ";
     $runQuery=mysqli_query($conn,$query);
     if(mysqli_num_rows($runQuery)==0){
       echo "Nothing";
