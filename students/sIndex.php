@@ -3,7 +3,7 @@
 
   </head>
   <body>
-    <?php require("../includes/nav.php");
+    <?php require("nav.php");
     if ($_SESSION['userType']=='1') {
 
 

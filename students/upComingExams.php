@@ -10,7 +10,7 @@
   <body>
 
 
-    <?php require("../includes/nav.php");?>
+    <?php require("nav.php");?>
     <main  role='main' class='container'>
 <br>
     <div class="card-deck">
@@ -49,7 +49,8 @@
 <?php
 // if($counter%3!=0){
 $date1=date('yy-m-d');
-$t=strtotime(date('g:i:s'));
+
+$t=strtotime(date('H:i:s'));
 echo "
       <div class='card border-primary mb-3' style='max-width: 18rem;'>
         <div class='card-header'>$p_topic </div>
@@ -60,6 +61,7 @@ echo "
 
 
           if($date1>=$p_s_date && $date1<=$p_t_date){
+          
             if( $t>=strtotime($p_s_time) && $t<=strtotime($p_t_time))
             {
 

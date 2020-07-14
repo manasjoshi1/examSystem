@@ -26,7 +26,7 @@ $target_file = $target_dir . $newfilename;
 $uploadOk = 1;
 $file_type=$_FILES['fileToUpload']['type'];
 
-if ($file_type=="application/pdf" ) {
+if ($file_type=="application/pdf" && $_FILES['fileToUpload']['size']<=10097152 ) {
 
  if(move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $target_file))
 
@@ -54,8 +54,10 @@ echo "<script>window.open('../students/sIndex.php','_self' )</script>";
 }
 
 else {
-
- echo "You may only upload PDFs<br>";
+echo  '<div class="alert alert-danger" role="alert">
+  You may only upload PDFs & Size must be less than 10 mb<br>!
+  </div>';
+  
 
 }
 

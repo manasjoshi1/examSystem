@@ -9,7 +9,7 @@
   </head>
   <body>
     <?php
-    require("../includes/nav.php");
+    require("../students/nav2.php");
     require_once(dirname(__FILE__).'/../db/config.php');
 
     if($_GET['p_id']){

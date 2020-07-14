@@ -14,7 +14,7 @@ if(isset($_POST['submit']) && $_POST['submit']=="Login"){
     $runQuery=mysqli_query($conn,$query);
     if(mysqli_num_rows($runQuery)==0){
       echo "<script>alert('This email does not exists please register.' )</script>";
-      echo "<script>window.open('../students/sIndex.php','_self' )</script>";
+      echo "<script>window.open('signin.php','_self' )</script>";
     }
       else{
         $passwordCorrect="";
@@ -48,16 +48,19 @@ if(isset($_POST['submit']) && $_POST['submit']=="Login"){
               elseif($status==0){
                 echo "<script>alert('You are not activated. Wait till your activation' )</script>";
 
-                    echo "<script>window.open('../signin.php','_self' )</script>";
+                    echo "<script>window.open('signin.php','_self' )</script>";
                   }
                   else{
                     echo "<script>alert('You are not a Member Anymore.' )</script>";
 
-                    echo "<script>window.open('../../index.php','_self' )</script>";
+                    echo "<script>window.open('index.php','_self' )</script>";
                   }
                 }
                 else{
-                  echo "<script>alert('Incorrect Credentials.. {$passwordCorrect}' )</script>";
+                  echo  '<div class="alert alert-danger" role="alert">
+                  Incorrect Credentials<br>!
+                    </div>';
+
 
 
 
@@ -78,7 +81,7 @@ if(isset($_POST['submit']) && $_POST['submit']=="Login"){
     $runQuery=mysqli_query($conn,$query);
     if(mysqli_num_rows($runQuery)==0){
       echo "<script>alert('This email does not exists please register.' )</script>";
-      echo "<script>window.open('../signup.php','_self' )</script>";
+      echo "<script>window.open('signup.php','_self' )</script>";
     }
     else{
    $passwordCorrect="";
@@ -101,14 +104,14 @@ if(isset($_POST['submit']) && $_POST['submit']=="Login"){
        elseif($status==0){
          echo "<script>alert('You are not activated. Wait till your activation' )</script>";
 
-                 echo "<script>window.open('../signin.php','_self' )</script>";
+                 echo "<script>window.open('signin.php','_self' )</script>";
 
 
        }
        else{
          echo "<script>alert('You are not a Member Anymore.' )</script>";
 
-                 echo "<script>window.open('../../index.php','_self' )</script>";
+                 echo "<script>window.open('index.php','_self' )</script>";
        }
      }
        else{

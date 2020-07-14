@@ -10,7 +10,7 @@
   <body>
 
 
-    <?php require("../includes/nav.php");?>
+    <?php require("nav.php");?>
     <main  role='main' class='container'>
 
     <div class="card-deck">

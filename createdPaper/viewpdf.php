@@ -8,7 +8,7 @@
 
   </head>
   <body>
-    <?php require("../includes/nav.php");
+    <?php require("../students/nav2.php");
     require_once(dirname(__FILE__).'/../db/config.php');
 
     if($_GET['p_id']){
@@ -33,7 +33,7 @@
     }
 
     $date1=date('yy-m-d');
-    $t=strtotime(date('g:i:s'));
+    $t=strtotime(date('H:i:s'));
     if($date1>=$p_s_date && $date1<=$p_t_date){
       if( $t>=strtotime($p_s_time) && $t<=strtotime($p_t_time))
       {

@@ -24,7 +24,7 @@ include('../includes/dropdowns.php');
     <a class="nav-link" href="create_notes.php">Create Notes</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../teachers/checked_paper_upload.php">Upload Checked Paper</a>
+    <a class="nav-link" href="../teachers/submittedPaper.php">Upload Checked Paper</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="../teachers/allStudents.php">Students</a>
