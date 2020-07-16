@@ -42,7 +42,7 @@ if(isset($_POST['submit']) && $_POST['submit']=="Login"){
               $_SESSION['userType']='1';
               $_SESSION['last_time'] = time();
               //die(print_r($_SESSION));
-
+                session_regenerate_id(true);
                 echo "<script>window.open('students/sIndex.php','_self' )</script>";
               }
               elseif($status==0){
